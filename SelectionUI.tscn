@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=3 uid="uid://dubdufllh5nbp"]
+
+[ext_resource type="Script" path="res://scripts/SelectionUI.gd" id="1_j6gme"]
+[ext_resource type="FontFile" uid="uid://duwgq1n3s22n" path="res://assets/NotoSansJP-VariableFont_wght.ttf" id="2_2go6i"]
+
+[node name="SelectionUi" type="Node2D"]
+script = ExtResource("1_j6gme")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackgroundColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -98.5
+offset_right = 196.0
+offset_bottom = 98.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="QuestionLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 80
+text = "What is this character?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestionLabelVar" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 80
+text = "testchar
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="ButtonA" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 80
+
+[node name="ButtonB" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 80
+
+[node name="ButtonC" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 80
+
+[node name="ButtonD" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 80
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 40
+text = "results here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonA" to="." method="_on_button_pressed" binds= [0]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonB" to="." method="_on_button_pressed" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonC" to="." method="_on_button_pressed" binds= [2]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonD" to="." method="_on_button_pressed" binds= [3]]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
