@@ -3,15 +3,17 @@ extends Node
 var strings
 var hiragana = []
 var romaji = []
+var notes = []
 var INCORRECT_TEXT = "Wrong, the answer is: "
 var CORRECT_TEXT = "Correct!"
 
 func _ready():
-	strings = csv_to_string_array("res://assets/hiragana-gojuon.txt")
-	strings.pop_front()
+	strings = csv_to_string_array("res://assets/hiragana.txt")
+	strings.pop_front() # remove header
 	for row in strings:
 		romaji.append(row[0])
 		hiragana.append(row[1])
+		notes.append(row[2])
 		
 func csv_to_string_array(file_path: String) -> Array:
 	var string_array = []

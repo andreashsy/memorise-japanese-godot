@@ -10,6 +10,7 @@ extends Node2D
 @onready var btns = [btn_a, btn_b, btn_c, btn_d]
 @onready var flip_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/FlipCheckButton")
 @onready var hira1_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira1CheckButton")
+@onready var hira2_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira2CheckButton")
 
 var correct_answer: String
 
@@ -19,9 +20,11 @@ func _ready() -> void:
 	new_question(flip_toggle_button.button_pressed)
 
 func new_question(is_char_question: bool = true) -> void:
+	var toggled_char_sets = get_toggled_char_sets()
+	var question_list = generate_question_list(toggled_char_sets)
+	var answer_list = generate_answer_list(toggled_char_sets)
 	var d
-	var question_list = generate_question_list()
-	var answer_list = generate_answer_list()
+	if not question_list or not question_list: return
 	if is_char_question:
 		d = generate_question_answer(question_list, answer_list)
 	else:
@@ -29,14 +32,18 @@ func new_question(is_char_question: bool = true) -> void:
 	populate_new_question(d['question'], d['options'])
 	correct_answer = d['answer']
 
-func generate_question_list(hiragana: bool = true) -> Array:
+func generate_question_list(char_sets: Array = []) -> Array:
 	var questions = []
-	if hiragana: questions.append_array(GlobalRef.hiragana)
+	for i in GlobalRef.notes.size():
+		if GlobalRef.notes[i] in char_sets:
+			questions.append(GlobalRef.hiragana[i])
 	return questions
 
-func generate_answer_list(hiragana: bool = true) -> Array:
+func generate_answer_list(char_sets: Array = []) -> Array:
 	var answers = []
-	if hiragana: answers.append_array(GlobalRef.romaji)
+	for i in GlobalRef.notes.size():
+		if GlobalRef.notes[i] in char_sets:
+			answers.append(GlobalRef.romaji[i])
 	return answers
 
 func populate_new_question(question: String = "", options: Array = ["","","",""]) -> void:
@@ -46,6 +53,12 @@ func populate_new_question(question: String = "", options: Array = ["","","",""]
 	btn_b.text = options[1]
 	btn_c.text = options[2]
 	btn_d.text = options[3]
+
+func get_toggled_char_sets() -> Array:
+	var toggled = []
+	if hira1_toggle_button.button_pressed: toggled.append('hira1')
+	if hira2_toggle_button.button_pressed: toggled.append('hira2')
+	return toggled
 
 func generate_question_answer(questions: Array, answers: Array) -> Dictionary:
 	var options_idx = n_numbers_without_replacement(questions.size(), 4)
