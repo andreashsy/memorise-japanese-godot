@@ -15,6 +15,7 @@ extends Node2D
 @onready var hira3_toggle_button = get_node("CanvasLayer/MenuVBox/Hira3CheckButton")
 @onready var kata1_toggle_button = get_node("CanvasLayer/MenuVBox/Kata1CheckButton")
 @onready var kata2_toggle_button = get_node("CanvasLayer/MenuVBox/Kata2CheckButton")
+
 var correct_answer: String
 
 func _ready() -> void:
@@ -27,8 +28,9 @@ func new_question(is_char_question: bool = true) -> void:
 	var toggled_char_sets = get_toggled_char_sets()
 	var question_list = generate_question_list(toggled_char_sets)
 	var answer_list = generate_answer_list(toggled_char_sets)
-	var d
 	if not question_list or not question_list: return
+	
+	var d
 	if is_char_question:
 		d = generate_question_answer(question_list, answer_list)
 	else:
