@@ -3,6 +3,7 @@ extends Node2D
 @onready var timer = get_node("Timer")
 @onready var question_label = get_node("CanvasLayer/MainVBox/QuestionLabelVar")
 @onready var result_label = get_node("CanvasLayer/MainVBox/ResultLabel")
+@onready var score_label = get_node("CanvasLayer/ScoreLabel")
 @onready var btn_a = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonA")
 @onready var btn_b = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonB")
 @onready var btn_c = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonC")
@@ -17,12 +18,15 @@ extends Node2D
 @onready var kata2_toggle_button = get_node("CanvasLayer/MenuVBox/Kata2CheckButton")
 
 var correct_answer: String
+var score_correct: int = 0
+var score_total: int = 0
 
 func _ready() -> void:
 	menu_box.visible = false
 	randomize()
 	if not GlobalRef.hiragana: return
 	new_question(flip_toggle_button.button_pressed)
+	update_score()
 
 func new_question(is_char_question: bool = true) -> void:
 	var toggled_char_sets = get_toggled_char_sets()
@@ -100,15 +104,28 @@ func validate_answer(picked: int) -> String:
 	var result = "" if is_answer_correct else correct_answer
 	return result
 
+func update_score() -> void:
+	var pct = 0.0
+	if not score_total == 0: pct = (100*score_correct/score_total)
+	score_label.text = "Score: %s/%s (%s%%)" % [score_correct, score_total, pct]
+
+func reset_score() -> void:
+	score_correct = 0
+	score_total = 0
+	update_score()
+
 func _on_button_pressed(button_idx: int) -> void:
 	if result_label.text != "": return
 	var result = validate_answer(button_idx)
 	
 	if result == "":
 		result_label.text = GlobalRef.CORRECT_TEXT
+		score_correct += 1
 	else:
 		result_label.text = GlobalRef.INCORRECT_TEXT + correct_answer
 	
+	score_total += 1
+	update_score()
 	timer.start()
 
 func _on_timer_timeout() -> void:
@@ -119,3 +136,6 @@ func _on_check_button_pressed():
 
 func _on_menu_button_pressed():
 	menu_box.visible = !menu_box.visible
+
+func _on_show_score_check_button_toggled(toggled_on):
+	score_label.visible = toggled_on

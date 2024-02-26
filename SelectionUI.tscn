@@ -256,6 +256,24 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
 text = "Katakana2"
 
+[node name="ShowScoreCheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0t3es")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tuliw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dby3b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
+text = "Show Score"
+
 [node name="MenuButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
@@ -271,6 +289,18 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_hefj4")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_jkksq")
 icon = ExtResource("3_iwd61")
 
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 69.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 20
+text = "Score: "
+vertical_alignment = 1
+
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
@@ -284,5 +314,6 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Hira3CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Kata1CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Kata2CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/MenuVBox/ShowScoreCheckButton" to="." method="_on_show_score_check_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
