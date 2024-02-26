@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is deploying to itch.io
 on: 
   push: 
     branches:
-      - master
+      - main
 jobs:
   deploy-itch:
     runs-on: ubuntu-latest
