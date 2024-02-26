@@ -8,7 +8,7 @@ extends Node2D
 @onready var btn_c = get_node("CanvasLayer/VBoxContainer/HBoxContainer/ButtonC")
 @onready var btn_d = get_node("CanvasLayer/VBoxContainer/HBoxContainer/ButtonD")
 @onready var btns = [btn_a, btn_b, btn_c, btn_d]
-
+@onready var flip_toggle_button = get_node("CanvasLayer/FlipCheckButton")
 var correct_answer: String
 
 func _ready():
@@ -16,8 +16,12 @@ func _ready():
 	if not GlobalRef.hiragana: return
 	new_question()
 
-func new_question() -> void:
-	var d = generate_question_answer(GlobalRef.hiragana, GlobalRef.romaji)
+func new_question(is_char_question: bool = true) -> void:
+	var d
+	if is_char_question:
+		d = generate_question_answer(GlobalRef.hiragana, GlobalRef.romaji)
+	else:
+		d = generate_question_answer(GlobalRef.romaji, GlobalRef.hiragana)
 	populate_new_question(d['question'], d['options'])
 	correct_answer = d['answer']
 
@@ -72,4 +76,7 @@ func _on_button_pressed(button_idx: int):
 	timer.start()
 
 func _on_timer_timeout():
-	new_question()
+	new_question(flip_toggle_button.button_pressed)
+
+func _on_flip_check_button_toggled(toggled_on) -> void:
+	new_question(flip_toggle_button.button_pressed)
