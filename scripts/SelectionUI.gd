@@ -59,10 +59,8 @@ func generate_answer_list(char_sets: Array = []) -> Array:
 func populate_new_question(question: String = "", options: Array = ["","","",""]) -> void:
 	result_label.text = ""
 	question_label.text = question
-	btn_a.text = options[0]
-	btn_b.text = options[1]
-	btn_c.text = options[2]
-	btn_d.text = options[3]
+	for i in btns.size():
+		btns[i].text = options[i]
 
 func get_toggled_char_sets() -> Array:
 	var toggled = []
