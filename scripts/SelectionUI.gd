@@ -11,7 +11,7 @@ extends Node2D
 @onready var flip_toggle_button = get_node("CanvasLayer/FlipCheckButton")
 var correct_answer: String
 
-func _ready():
+func _ready() -> void:
 	randomize()
 	if not GlobalRef.hiragana: return
 	new_question(flip_toggle_button.button_pressed)
@@ -64,7 +64,7 @@ func validate_answer(picked: int) -> String:
 	var result = "" if is_answer_correct else correct_answer
 	return result
 
-func _on_button_pressed(button_idx: int):
+func _on_button_pressed(button_idx: int) -> void:
 	if result_label.text != "": return
 	var result = validate_answer(button_idx)
 	
@@ -75,7 +75,7 @@ func _on_button_pressed(button_idx: int):
 	
 	timer.start()
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	new_question(flip_toggle_button.button_pressed)
 
 func _on_flip_check_button_toggled(toggled_on) -> void:
