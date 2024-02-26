@@ -17,6 +17,7 @@ extends Node2D
 var correct_answer: String
 
 func _ready() -> void:
+	menu_box.visible = false
 	randomize()
 	if not GlobalRef.hiragana: return
 	new_question(flip_toggle_button.button_pressed)
