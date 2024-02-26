@@ -1,0 +1,42 @@
+name: deploy-html5-itchio
+run-name: ${{ github.actor }} is deploying to itch.io
+on: 
+  push: 
+    branches:
+      - master
+jobs:
+  deploy-itch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main repo
+        uses: actions/checkout@v4
+        with:
+          path: main
+      
+      - name: Checkout export tools repo
+        uses: actions/checkout@v4
+        with: 
+          repository: andreashsy/godot-export-tools
+          path: export-utils
+      
+      - name: Setup export tools
+        run: |
+          unzip export-utils/Godot_v4.2.1-stable_linux.x86_64.zip
+          unzip export-utils/butler-linux-amd64.zip
+          mv Godot_v4.2.1-stable_linux.x86_64 /usr/local/bin/godot
+          mv butler /usr/local/bin/butler
+          rm -f *7z*.so
+
+      - name: Build html5
+        run: |
+          mkdir export
+          godot --headless --path main --export-release html5cicd ../export/index.html
+          zip -j html5.zip export/*
+
+      - name: Deploy
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: |
+          butler login
+          butler push html5.zip andygame/mjc:html5
+
