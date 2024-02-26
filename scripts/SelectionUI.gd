@@ -14,7 +14,7 @@ var correct_answer: String
 func _ready():
 	randomize()
 	if not GlobalRef.hiragana: return
-	new_question()
+	new_question(flip_toggle_button.button_pressed)
 
 func new_question(is_char_question: bool = true) -> void:
 	var d
@@ -65,7 +65,7 @@ func validate_answer(picked: int) -> String:
 	return result
 
 func _on_button_pressed(button_idx: int):
-	print("button pressed: ", button_idx)
+	if result_label.text != "": return
 	var result = validate_answer(button_idx)
 	
 	if result == "":
