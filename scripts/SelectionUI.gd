@@ -18,12 +18,13 @@ var btns = []
 var correct_answer: String
 var score_correct: int = 0
 var score_total: int = 0
-var num_choices: int = 4
+var num_choices: int
 
 func _ready() -> void:
 	if not GlobalRef.hiragana: return
 	
 	menu_box.visible = false
+	num_choices = get_node("CanvasLayer/MenuVBox/OptionButton").selected + 4
 	instantiate_buttons()
 	
 	randomize()
@@ -36,6 +37,11 @@ func instantiate_buttons() -> void:
 		btn_instance.pressed.connect(self._on_button_pressed.bind(i))
 		btns.append(btn_instance)
 		button_container.add_child(btn_instance)
+
+func clear_buttons() -> void:
+	for btn in btns:
+		btn.queue_free()
+	btns = []
 
 func new_question(is_char_question: bool = true) -> void:
 	var toggled_char_sets = get_toggled_char_sets()
@@ -147,3 +153,9 @@ func _on_menu_button_pressed():
 
 func _on_show_score_check_button_toggled(toggled_on):
 	score_label.visible = toggled_on
+
+func _on_option_button_item_selected(index):
+	num_choices = index + 4
+	clear_buttons()
+	instantiate_buttons()
+	new_question(flip_toggle_button.button_pressed)

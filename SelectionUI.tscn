@@ -250,6 +250,17 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
 text = "Show Score"
 
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/MenuVBox"]
+layout_mode = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "4 Options"
+popup/item_0/id = 0
+popup/item_1/text = "5 Options"
+popup/item_1/id = 1
+popup/item_2/text = "6 Options"
+popup/item_2/id = 2
+
 [node name="MenuButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
@@ -287,5 +298,6 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Kata1CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Kata2CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/MenuVBox/ShowScoreCheckButton" to="." method="_on_show_score_check_button_toggled"]
+[connection signal="item_selected" from="CanvasLayer/MenuVBox/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
