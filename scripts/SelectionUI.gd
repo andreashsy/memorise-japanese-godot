@@ -1,13 +1,14 @@
 extends Node2D
 
 @onready var timer = get_node("Timer")
-@onready var question_label = get_node("CanvasLayer/VBoxContainer/QuestionLabelVar")
-@onready var result_label = get_node("CanvasLayer/VBoxContainer/ResultLabel")
-@onready var btn_a = get_node("CanvasLayer/VBoxContainer/HBoxContainer/ButtonA")
-@onready var btn_b = get_node("CanvasLayer/VBoxContainer/HBoxContainer/ButtonB")
-@onready var btn_c = get_node("CanvasLayer/VBoxContainer/HBoxContainer/ButtonC")
-@onready var btn_d = get_node("CanvasLayer/VBoxContainer/HBoxContainer/ButtonD")
+@onready var question_label = get_node("CanvasLayer/MainVBoxContainer/QuestionLabelVar")
+@onready var result_label = get_node("CanvasLayer/MainVBoxContainer/ResultLabel")
+@onready var btn_a = get_node("CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonA")
+@onready var btn_b = get_node("CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonB")
+@onready var btn_c = get_node("CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonC")
+@onready var btn_d = get_node("CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonD")
 @onready var btns = [btn_a, btn_b, btn_c, btn_d]
+@onready var menu_box = get_node("CanvasLayer/MenuVBoxContainer")
 @onready var flip_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/FlipCheckButton")
 @onready var hira1_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira1CheckButton")
 @onready var hira2_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira2CheckButton")
@@ -109,3 +110,6 @@ func _on_timer_timeout() -> void:
 
 func _on_check_button_pressed():
 	new_question(flip_toggle_button.button_pressed)
+
+func _on_menu_button_pressed():
+	menu_box.visible = !menu_box.visible
