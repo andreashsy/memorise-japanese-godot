@@ -220,6 +220,42 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
 text = "Hiragana3"
 
+[node name="Kata1CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0t3es")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tuliw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dby3b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
+text = "Katakana1"
+
+[node name="Kata2CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0t3es")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tuliw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dby3b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
+text = "Katakana2"
+
 [node name="MenuButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
@@ -246,5 +282,7 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Hira1CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Hira2CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Hira3CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Kata1CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Kata2CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -13,7 +13,8 @@ extends Node2D
 @onready var hira1_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira1CheckButton")
 @onready var hira2_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira2CheckButton")
 @onready var hira3_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira3CheckButton")
-
+@onready var kata1_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Kata1CheckButton")
+@onready var kata2_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Kata2CheckButton")
 var correct_answer: String
 
 func _ready() -> void:
@@ -62,6 +63,8 @@ func get_toggled_char_sets() -> Array:
 	if hira1_toggle_button.button_pressed: toggled.append('hira1')
 	if hira2_toggle_button.button_pressed: toggled.append('hira2')
 	if hira3_toggle_button.button_pressed: toggled.append('hira3')
+	if kata1_toggle_button.button_pressed: toggled.append('kata1')
+	if kata2_toggle_button.button_pressed: toggled.append('kata2')
 	return toggled
 
 func generate_question_answer(questions: Array, answers: Array) -> Dictionary:

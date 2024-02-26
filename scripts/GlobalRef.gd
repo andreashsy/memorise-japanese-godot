@@ -8,7 +8,7 @@ var INCORRECT_TEXT = "Wrong, the answer is: "
 var CORRECT_TEXT = "Correct!"
 
 func _ready():
-	strings = csv_to_string_array("res://assets/hiragana.txt")
+	strings = csv_to_string_array("res://assets/hirakata.txt")
 	strings.pop_front() # remove header
 	for row in strings:
 		romaji.append(row[0])
