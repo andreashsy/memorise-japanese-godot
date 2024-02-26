@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://q4l7pjqph57d"]
+
+[ext_resource type="FontFile" uid="uid://duwgq1n3s22n" path="res://assets/NotoSansJP-VariableFont_wght.ttf" id="1_82e3j"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_82e3j")
+theme_override_font_sizes/font_size = 80

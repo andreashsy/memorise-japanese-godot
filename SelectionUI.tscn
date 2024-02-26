@@ -103,30 +103,6 @@ size_flags_vertical = 3
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="ButtonA" type="Button" parent="CanvasLayer/MainVBox/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("2_2go6i")
-theme_override_font_sizes/font_size = 80
-
-[node name="ButtonB" type="Button" parent="CanvasLayer/MainVBox/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("2_2go6i")
-theme_override_font_sizes/font_size = 80
-
-[node name="ButtonC" type="Button" parent="CanvasLayer/MainVBox/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("2_2go6i")
-theme_override_font_sizes/font_size = 80
-
-[node name="ButtonD" type="Button" parent="CanvasLayer/MainVBox/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("2_2go6i")
-theme_override_font_sizes/font_size = 80
-
 [node name="ResultLabel" type="Label" parent="CanvasLayer/MainVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -304,10 +280,6 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="pressed" from="CanvasLayer/MainVBox/HBoxContainer/ButtonA" to="." method="_on_button_pressed" binds= [0]]
-[connection signal="pressed" from="CanvasLayer/MainVBox/HBoxContainer/ButtonB" to="." method="_on_button_pressed" binds= [1]]
-[connection signal="pressed" from="CanvasLayer/MainVBox/HBoxContainer/ButtonC" to="." method="_on_button_pressed" binds= [2]]
-[connection signal="pressed" from="CanvasLayer/MainVBox/HBoxContainer/ButtonD" to="." method="_on_button_pressed" binds= [3]]
 [connection signal="pressed" from="CanvasLayer/MenuVBox/FlipCheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Hira1CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Hira2CheckButton" to="." method="_on_check_button_pressed"]

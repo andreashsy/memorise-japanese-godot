@@ -1,14 +1,11 @@
 extends Node2D
 
+var button = preload("res://button.tscn")
 @onready var timer = get_node("Timer")
 @onready var question_label = get_node("CanvasLayer/MainVBox/QuestionLabelVar")
 @onready var result_label = get_node("CanvasLayer/MainVBox/ResultLabel")
 @onready var score_label = get_node("CanvasLayer/ScoreLabel")
-@onready var btn_a = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonA")
-@onready var btn_b = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonB")
-@onready var btn_c = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonC")
-@onready var btn_d = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonD")
-@onready var btns = [btn_a, btn_b, btn_c, btn_d]
+@onready var button_container = get_node("CanvasLayer/MainVBox/HBoxContainer")
 @onready var menu_box = get_node("CanvasLayer/MenuVBox")
 @onready var flip_toggle_button = get_node("CanvasLayer/MenuVBox/FlipCheckButton")
 @onready var hira1_toggle_button = get_node("CanvasLayer/MenuVBox/Hira1CheckButton")
@@ -17,11 +14,23 @@ extends Node2D
 @onready var kata1_toggle_button = get_node("CanvasLayer/MenuVBox/Kata1CheckButton")
 @onready var kata2_toggle_button = get_node("CanvasLayer/MenuVBox/Kata2CheckButton")
 
+var btns = []
 var correct_answer: String
 var score_correct: int = 0
 var score_total: int = 0
+var num_choices: int = 4
 
 func _ready() -> void:
+	for btn in btns:
+		btn.queue_free()
+	btns = []
+	
+	for i in num_choices:
+		var btn_instance = button.instantiate()
+		btn_instance.pressed.connect(self._on_button_pressed.bind(i))
+		btns.append(btn_instance)
+		button_container.add_child(btn_instance)
+	
 	menu_box.visible = false
 	randomize()
 	if not GlobalRef.hiragana: return
@@ -36,9 +45,9 @@ func new_question(is_char_question: bool = true) -> void:
 	
 	var d
 	if is_char_question:
-		d = generate_question_answer(question_list, answer_list)
+		d = generate_question_answer(question_list, answer_list, num_choices)
 	else:
-		d = generate_question_answer(answer_list, question_list)
+		d = generate_question_answer(answer_list, question_list, num_choices)
 	populate_new_question(d['question'], d['options'])
 	correct_answer = d['answer']
 
@@ -71,8 +80,8 @@ func get_toggled_char_sets() -> Array:
 	if kata2_toggle_button.button_pressed: toggled.append('kata2')
 	return toggled
 
-func generate_question_answer(questions: Array, answers: Array) -> Dictionary:
-	var options_idx = n_numbers_without_replacement(questions.size(), 4)
+func generate_question_answer(questions: Array, answers: Array, num_options: int = 4) -> Dictionary:
+	var options_idx = n_numbers_without_replacement(questions.size(), num_options)
 	var ans_idx = options_idx[0]
 	var options = []
 	for i in options_idx:
@@ -104,6 +113,7 @@ func validate_answer(picked: int) -> String:
 
 func update_score() -> void:
 	var pct = 0.0
+	@warning_ignore("integer_division")
 	if not score_total == 0: pct = (100*score_correct/score_total)
 	score_label.text = "Score: %s/%s (%s%%)" % [score_correct, score_total, pct]
 
