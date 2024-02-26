@@ -18,12 +18,24 @@ func _ready() -> void:
 
 func new_question(is_char_question: bool = true) -> void:
 	var d
+	var question_list = generate_question_list()
+	var answer_list = generate_answer_list()
 	if is_char_question:
-		d = generate_question_answer(GlobalRef.hiragana, GlobalRef.romaji)
+		d = generate_question_answer(question_list, answer_list)
 	else:
-		d = generate_question_answer(GlobalRef.romaji, GlobalRef.hiragana)
+		d = generate_question_answer(answer_list, question_list)
 	populate_new_question(d['question'], d['options'])
 	correct_answer = d['answer']
+
+func generate_question_list(hiragana: bool = true) -> Array:
+	var questions = []
+	if hiragana: questions.append_array(GlobalRef.hiragana)
+	return questions
+
+func generate_answer_list(hiragana: bool = true) -> Array:
+	var answers = []
+	if hiragana: answers.append_array(GlobalRef.romaji)
+	return answers
 
 func populate_new_question(question: String = "", options: Array = ["","","",""]) -> void:
 	result_label.text = ""
@@ -78,5 +90,5 @@ func _on_button_pressed(button_idx: int) -> void:
 func _on_timer_timeout() -> void:
 	new_question(flip_toggle_button.button_pressed)
 
-func _on_flip_check_button_toggled(toggled_on) -> void:
+func _on_flip_check_button_toggled(_toggled_on) -> void:
 	new_question(flip_toggle_button.button_pressed)
