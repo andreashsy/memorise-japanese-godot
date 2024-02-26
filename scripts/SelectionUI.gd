@@ -21,21 +21,21 @@ var score_total: int = 0
 var num_choices: int = 4
 
 func _ready() -> void:
-	for btn in btns:
-		btn.queue_free()
-	btns = []
+	if not GlobalRef.hiragana: return
 	
+	menu_box.visible = false
+	instantiate_buttons()
+	
+	randomize()
+	new_question(flip_toggle_button.button_pressed)
+	update_score()
+
+func instantiate_buttons() -> void:
 	for i in num_choices:
 		var btn_instance = button.instantiate()
 		btn_instance.pressed.connect(self._on_button_pressed.bind(i))
 		btns.append(btn_instance)
 		button_container.add_child(btn_instance)
-	
-	menu_box.visible = false
-	randomize()
-	if not GlobalRef.hiragana: return
-	new_question(flip_toggle_button.button_pressed)
-	update_score()
 
 func new_question(is_char_question: bool = true) -> void:
 	var toggled_char_sets = get_toggled_char_sets()
