@@ -1,20 +1,20 @@
 extends Node2D
 
 @onready var timer = get_node("Timer")
-@onready var question_label = get_node("CanvasLayer/MainVBoxContainer/QuestionLabelVar")
-@onready var result_label = get_node("CanvasLayer/MainVBoxContainer/ResultLabel")
-@onready var btn_a = get_node("CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonA")
-@onready var btn_b = get_node("CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonB")
-@onready var btn_c = get_node("CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonC")
-@onready var btn_d = get_node("CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonD")
+@onready var question_label = get_node("CanvasLayer/MainVBox/QuestionLabelVar")
+@onready var result_label = get_node("CanvasLayer/MainVBox/ResultLabel")
+@onready var btn_a = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonA")
+@onready var btn_b = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonB")
+@onready var btn_c = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonC")
+@onready var btn_d = get_node("CanvasLayer/MainVBox/HBoxContainer/ButtonD")
 @onready var btns = [btn_a, btn_b, btn_c, btn_d]
-@onready var menu_box = get_node("CanvasLayer/MenuVBoxContainer")
-@onready var flip_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/FlipCheckButton")
-@onready var hira1_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira1CheckButton")
-@onready var hira2_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira2CheckButton")
-@onready var hira3_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira3CheckButton")
-@onready var kata1_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Kata1CheckButton")
-@onready var kata2_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Kata2CheckButton")
+@onready var menu_box = get_node("CanvasLayer/MenuVBox")
+@onready var flip_toggle_button = get_node("CanvasLayer/MenuVBox/FlipCheckButton")
+@onready var hira1_toggle_button = get_node("CanvasLayer/MenuVBox/Hira1CheckButton")
+@onready var hira2_toggle_button = get_node("CanvasLayer/MenuVBox/Hira2CheckButton")
+@onready var hira3_toggle_button = get_node("CanvasLayer/MenuVBox/Hira3CheckButton")
+@onready var kata1_toggle_button = get_node("CanvasLayer/MenuVBox/Kata1CheckButton")
+@onready var kata2_toggle_button = get_node("CanvasLayer/MenuVBox/Kata2CheckButton")
 var correct_answer: String
 
 func _ready() -> void:

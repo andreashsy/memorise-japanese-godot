@@ -63,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.870588, 0.870588, 0.870588, 1)
 
-[node name="MainVBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="MainVBox" type="VBoxContainer" parent="CanvasLayer"]
 custom_minimum_size = Vector2(800, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,7 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="QuestionLabel" type="Label" parent="CanvasLayer/MainVBoxContainer"]
+[node name="QuestionLabel" type="Label" parent="CanvasLayer/MainVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2go6i")
@@ -87,7 +87,7 @@ text = "What is this?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="QuestionLabelVar" type="Label" parent="CanvasLayer/MainVBoxContainer"]
+[node name="QuestionLabelVar" type="Label" parent="CanvasLayer/MainVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2go6i")
@@ -97,37 +97,37 @@ text = "testchar
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainVBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="ButtonA" type="Button" parent="CanvasLayer/MainVBoxContainer/HBoxContainer"]
+[node name="ButtonA" type="Button" parent="CanvasLayer/MainVBox/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_2go6i")
 theme_override_font_sizes/font_size = 80
 
-[node name="ButtonB" type="Button" parent="CanvasLayer/MainVBoxContainer/HBoxContainer"]
+[node name="ButtonB" type="Button" parent="CanvasLayer/MainVBox/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_2go6i")
 theme_override_font_sizes/font_size = 80
 
-[node name="ButtonC" type="Button" parent="CanvasLayer/MainVBoxContainer/HBoxContainer"]
+[node name="ButtonC" type="Button" parent="CanvasLayer/MainVBox/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_2go6i")
 theme_override_font_sizes/font_size = 80
 
-[node name="ButtonD" type="Button" parent="CanvasLayer/MainVBoxContainer/HBoxContainer"]
+[node name="ButtonD" type="Button" parent="CanvasLayer/MainVBox/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_2go6i")
 theme_override_font_sizes/font_size = 80
 
-[node name="ResultLabel" type="Label" parent="CanvasLayer/MainVBoxContainer"]
+[node name="ResultLabel" type="Label" parent="CanvasLayer/MainVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2go6i")
@@ -136,7 +136,7 @@ text = "results here"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuVBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="MenuVBox" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -146,7 +146,7 @@ offset_right = -8.0
 offset_bottom = 227.0
 grow_horizontal = 0
 
-[node name="FlipCheckButton" type="CheckButton" parent="CanvasLayer/MenuVBoxContainer"]
+[node name="FlipCheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -165,7 +165,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_tfqfa")
 button_pressed = true
 text = "Char is Q"
 
-[node name="Hira1CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBoxContainer"]
+[node name="Hira1CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -184,7 +184,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_s103r")
 button_pressed = true
 text = "Hiragana1"
 
-[node name="Hira2CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBoxContainer"]
+[node name="Hira2CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -202,7 +202,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fkyc3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g8ohj")
 text = "Hiragana2"
 
-[node name="Hira3CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBoxContainer"]
+[node name="Hira3CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -220,7 +220,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
 text = "Hiragana3"
 
-[node name="Kata1CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBoxContainer"]
+[node name="Kata1CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -238,7 +238,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
 text = "Katakana1"
 
-[node name="Kata2CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBoxContainer"]
+[node name="Kata2CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -274,15 +274,15 @@ icon = ExtResource("3_iwd61")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="pressed" from="CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonA" to="." method="_on_button_pressed" binds= [0]]
-[connection signal="pressed" from="CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonB" to="." method="_on_button_pressed" binds= [1]]
-[connection signal="pressed" from="CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonC" to="." method="_on_button_pressed" binds= [2]]
-[connection signal="pressed" from="CanvasLayer/MainVBoxContainer/HBoxContainer/ButtonD" to="." method="_on_button_pressed" binds= [3]]
-[connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/FlipCheckButton" to="." method="_on_check_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Hira1CheckButton" to="." method="_on_check_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Hira2CheckButton" to="." method="_on_check_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Hira3CheckButton" to="." method="_on_check_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Kata1CheckButton" to="." method="_on_check_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Kata2CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainVBox/HBoxContainer/ButtonA" to="." method="_on_button_pressed" binds= [0]]
+[connection signal="pressed" from="CanvasLayer/MainVBox/HBoxContainer/ButtonB" to="." method="_on_button_pressed" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/MainVBox/HBoxContainer/ButtonC" to="." method="_on_button_pressed" binds= [2]]
+[connection signal="pressed" from="CanvasLayer/MainVBox/HBoxContainer/ButtonD" to="." method="_on_button_pressed" binds= [3]]
+[connection signal="pressed" from="CanvasLayer/MenuVBox/FlipCheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuVBox/Hira1CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuVBox/Hira2CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuVBox/Hira3CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuVBox/Kata1CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuVBox/Kata2CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
