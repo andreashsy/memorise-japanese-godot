@@ -81,11 +81,11 @@ func get_toggled_char_sets() -> Array:
 	return toggled
 
 func generate_question_answer(questions: Array, answers: Array, num_options: int = 4) -> Dictionary:
-	var options_idx = n_numbers_without_replacement(questions.size(), num_options)
-	var ans_idx = options_idx[0]
+	var options_idxes = n_numbers_without_replacement(questions.size(), num_options)
+	var ans_idx = options_idxes[0]
 	var options = []
-	for i in options_idx:
-		options.append(answers[i])
+	for idx in options_idxes:
+		options.append(answers[idx])
 	options.shuffle()
 	var question = questions[ans_idx]
 	var answer = answers[ans_idx]
