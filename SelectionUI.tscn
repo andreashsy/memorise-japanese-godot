@@ -87,11 +87,12 @@ text = "results here"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FlipCheckButton" type="CheckButton" parent="CanvasLayer"]
-offset_left = 23.0
-offset_top = 13.0
-offset_right = 97.0
-offset_bottom = 45.0
+[node name="MenuVBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FlipCheckButton" type="CheckButton" parent="CanvasLayer/MenuVBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -102,7 +103,21 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2go6i")
 theme_override_font_sizes/font_size = 20
 button_pressed = true
-text = "Character is question"
+text = "Char is Q"
+
+[node name="Hira1CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 20
+button_pressed = true
+text = "Hiragana1"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -111,5 +126,6 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonB" to="." method="_on_button_pressed" binds= [1]]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonC" to="." method="_on_button_pressed" binds= [2]]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonD" to="." method="_on_button_pressed" binds= [3]]
-[connection signal="toggled" from="CanvasLayer/FlipCheckButton" to="." method="_on_flip_check_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/FlipCheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuVBoxContainer/Hira1CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

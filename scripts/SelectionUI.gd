@@ -8,7 +8,9 @@ extends Node2D
 @onready var btn_c = get_node("CanvasLayer/VBoxContainer/HBoxContainer/ButtonC")
 @onready var btn_d = get_node("CanvasLayer/VBoxContainer/HBoxContainer/ButtonD")
 @onready var btns = [btn_a, btn_b, btn_c, btn_d]
-@onready var flip_toggle_button = get_node("CanvasLayer/FlipCheckButton")
+@onready var flip_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/FlipCheckButton")
+@onready var hira1_toggle_button = get_node("CanvasLayer/MenuVBoxContainer/Hira1CheckButton")
+
 var correct_answer: String
 
 func _ready() -> void:
@@ -90,5 +92,5 @@ func _on_button_pressed(button_idx: int) -> void:
 func _on_timer_timeout() -> void:
 	new_question(flip_toggle_button.button_pressed)
 
-func _on_flip_check_button_toggled(_toggled_on) -> void:
+func _on_check_button_pressed():
 	new_question(flip_toggle_button.button_pressed)
