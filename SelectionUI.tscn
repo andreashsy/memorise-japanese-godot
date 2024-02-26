@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.768627, 0.968627, 0.737255, 1)
+color = Color(0.870588, 0.870588, 0.870588, 1)
 
 [node name="MainVBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 custom_minimum_size = Vector2(800, 0)
