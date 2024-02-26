@@ -20,9 +20,3 @@ func csv_to_string_array(file_path: String) -> Array:
 		var line = file.get_csv_line()
 		string_array.append(line)
 	return string_array
-
-#func csv_to_string_array(file_path: String) -> Array:
-	#var string_array = []
-	#var file = ResourceLoader.load("res://assets/hiragana-gojuon.txt")
-	#print(file)
-	#return string_array
