@@ -85,7 +85,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2go6i")
 theme_override_font_sizes/font_size = 80
-text = "What is this?"
+text = "これはなんですか"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -141,7 +141,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_e2417")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_iiy4a")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tfqfa")
 button_pressed = true
-text = "Char is Q"
+text = "スワップ"
 
 [node name="Hira1CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
@@ -250,17 +250,17 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_tuliw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dby3b")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
-text = "Show Score"
+text = "スコア"
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
 item_count = 3
 selected = 0
-popup/item_0/text = "4 Options"
+popup/item_0/text = "4 つのせんたくし"
 popup/item_0/id = 0
-popup/item_1/text = "5 Options"
+popup/item_1/text = "5 つのせんたくし"
 popup/item_1/id = 1
-popup/item_2/text = "6 Options"
+popup/item_2/text = "6 つのせんたくし"
 popup/item_2/id = 2
 
 [node name="ReferenceHBox" type="HBoxContainer" parent="CanvasLayer"]
@@ -299,6 +299,29 @@ theme_override_fonts/font = ExtResource("2_2go6i")
 theme_override_font_sizes/font_size = 20
 text = "カタカナ"
 
+[node name="RefCenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HiraganaRef" type="Sprite2D" parent="CanvasLayer/RefCenterContainer"]
+visible = false
+position = Vector2(20, 20)
+texture = ExtResource("4_sppvp")
+
+[node name="KatakanaRef" type="Sprite2D" parent="CanvasLayer/RefCenterContainer"]
+visible = false
+position = Vector2(20, 20)
+texture = ExtResource("5_5joi0")
+
 [node name="MenuButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
@@ -325,16 +348,6 @@ theme_override_fonts/font = ExtResource("2_2go6i")
 theme_override_font_sizes/font_size = 20
 text = "Score: "
 vertical_alignment = 1
-
-[node name="HiraganaRef" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(576, 324)
-texture = ExtResource("4_sppvp")
-
-[node name="KatakanaRef" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(576, 324)
-texture = ExtResource("5_5joi0")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
