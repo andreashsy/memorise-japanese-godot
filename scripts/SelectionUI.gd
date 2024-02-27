@@ -125,7 +125,7 @@ func update_score() -> void:
 	var pct = 0.0
 	@warning_ignore("integer_division")
 	if not score_total == 0: pct = (100*score_correct/score_total)
-	score_label.text = "Score: %s/%s (%s%%)" % [score_correct, score_total, pct]
+	score_label.text = "スコア: %s/%s (%s%%)" % [score_correct, score_total, pct]
 
 func reset_score() -> void:
 	score_correct = 0
