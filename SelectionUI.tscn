@@ -158,7 +158,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_fj00y")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a670a")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_s103r")
 button_pressed = true
-text = "Hiragana1"
+text = "ごじゅうおん"
 
 [node name="Hira2CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
@@ -176,7 +176,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_4e4f1")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_bcji5")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fkyc3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g8ohj")
-text = "Hiragana2"
+text = "だくてん"
 
 [node name="Hira3CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
@@ -194,7 +194,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_tuliw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dby3b")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
-text = "Hiragana3"
+text = "ようおん"
 
 [node name="Kata1CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
@@ -212,7 +212,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_tuliw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dby3b")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
-text = "Katakana1"
+text = "ゴジユウオン"
 
 [node name="Kata2CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
@@ -230,7 +230,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_tuliw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dby3b")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
-text = "Katakana2"
+text = "ダクテン"
 
 [node name="ShowScoreCheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
