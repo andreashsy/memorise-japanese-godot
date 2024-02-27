@@ -4,8 +4,8 @@ var strings
 var hiragana = []
 var romaji = []
 var notes = []
-var INCORRECT_TEXT = "Wrong, the answer is: "
-var CORRECT_TEXT = "Correct!"
+var INCORRECT_TEXT = "間違っています、答えは: "
+var CORRECT_TEXT = "正しい！"
 
 func _ready():
 	strings = csv_to_string_array("res://assets/hirakata.txt")
