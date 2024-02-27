@@ -5,6 +5,8 @@ var button = preload("res://button.tscn")
 @onready var question_label = get_node("CanvasLayer/MainVBox/QuestionLabelVar")
 @onready var result_label = get_node("CanvasLayer/MainVBox/ResultLabel")
 @onready var score_label = get_node("CanvasLayer/ScoreLabel")
+@onready var hiragana_ref = get_node("CanvasLayer/HiraganaRef")
+@onready var katakana_ref = get_node("CanvasLayer/KatakanaRef")
 @onready var button_container = get_node("CanvasLayer/MainVBox/HBoxContainer")
 @onready var menu_box = get_node("CanvasLayer/MenuVBox")
 @onready var flip_toggle_button = get_node("CanvasLayer/MenuVBox/FlipCheckButton")
@@ -154,6 +156,12 @@ func _on_menu_button_pressed():
 func _on_show_score_check_button_toggled(toggled_on):
 	score_label.visible = toggled_on
 
+func _on_hiragana_toggle_button_pressed():
+	hiragana_ref.visible = !hiragana_ref.visible
+
+func _on_katakana_toggle_button_pressed():
+	katakana_ref.visible = !katakana_ref.visible
+	
 func _on_option_button_item_selected(index):
 	num_choices = index + 4
 	clear_buttons()

@@ -1,8 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://dubdufllh5nbp"]
+[gd_scene load_steps=29 format=3 uid="uid://dubdufllh5nbp"]
 
 [ext_resource type="Script" path="res://scripts/SelectionUI.gd" id="1_j6gme"]
 [ext_resource type="FontFile" uid="uid://duwgq1n3s22n" path="res://assets/NotoSansJP-VariableFont_wght.ttf" id="2_2go6i"]
 [ext_resource type="Texture2D" uid="uid://cg5b0d5qju83q" path="res://assets/menu_icon.png" id="3_iwd61"]
+[ext_resource type="Texture2D" uid="uid://bv75eju33i48q" path="res://assets/hiragana.png" id="4_sppvp"]
+[ext_resource type="Texture2D" uid="uid://dantwo8suu2he" path="res://assets/katakana.png" id="5_5joi0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_deo1u"]
 
@@ -261,6 +263,42 @@ popup/item_1/id = 1
 popup/item_2/text = "6 Options"
 popup/item_2/id = 2
 
+[node name="ReferenceHBox" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -52.0
+offset_right = 190.0
+offset_bottom = -9.0
+grow_vertical = 0
+
+[node name="HiraganaToggleButton" type="Button" parent="CanvasLayer/ReferenceHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 20
+text = "ひらがな"
+
+[node name="KatakanaToggleButton" type="Button" parent="CanvasLayer/ReferenceHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 20
+text = "カタカナ"
+
 [node name="MenuButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
@@ -288,6 +326,16 @@ theme_override_font_sizes/font_size = 20
 text = "Score: "
 vertical_alignment = 1
 
+[node name="HiraganaRef" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("4_sppvp")
+
+[node name="KatakanaRef" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("5_5joi0")
+
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
@@ -299,5 +347,7 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Kata2CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/MenuVBox/ShowScoreCheckButton" to="." method="_on_show_score_check_button_toggled"]
 [connection signal="item_selected" from="CanvasLayer/MenuVBox/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="CanvasLayer/ReferenceHBox/HiraganaToggleButton" to="." method="_on_hiragana_toggle_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ReferenceHBox/KatakanaToggleButton" to="." method="_on_katakana_toggle_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
