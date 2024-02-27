@@ -15,6 +15,7 @@ var button = preload("res://button.tscn")
 @onready var hira3_toggle_button = get_node("CanvasLayer/MenuVBox/Hira3CheckButton")
 @onready var kata1_toggle_button = get_node("CanvasLayer/MenuVBox/Kata1CheckButton")
 @onready var kata2_toggle_button = get_node("CanvasLayer/MenuVBox/Kata2CheckButton")
+@onready var kata3_toggle_button = get_node("CanvasLayer/MenuVBox/Kata3CheckButton")
 
 var btns = []
 var correct_answer: String
@@ -86,6 +87,7 @@ func get_toggled_char_sets() -> Array:
 	if hira3_toggle_button.button_pressed: toggled.append('hira3')
 	if kata1_toggle_button.button_pressed: toggled.append('kata1')
 	if kata2_toggle_button.button_pressed: toggled.append('kata2')
+	if kata3_toggle_button.button_pressed: toggled.append('kata3')
 	return toggled
 
 func generate_question_answer(questions: Array, answers: Array, num_options: int = 4) -> Dictionary:

@@ -234,6 +234,24 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
 text = "ダクテン"
 
+[node name="Kata3CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2go6i")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0t3es")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tuliw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dby3b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
+text = "ヨウオン"
+
 [node name="ShowScoreCheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -358,6 +376,7 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Hira3CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Kata1CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuVBox/Kata2CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuVBox/Kata3CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/MenuVBox/ShowScoreCheckButton" to="." method="_on_show_score_check_button_toggled"]
 [connection signal="item_selected" from="CanvasLayer/MenuVBox/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="CanvasLayer/ReferenceHBox/HiraganaToggleButton" to="." method="_on_hiragana_toggle_button_pressed"]
