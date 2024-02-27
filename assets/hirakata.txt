@@ -67,9 +67,9 @@ pi,ぴ,hira2
 pu,ぷ,hira2
 pe,ぺ,hira2
 po,ぽ,hira2
-ya,や,hira3
-yu,ゆ,hira3
-yo,よ,hira3
+ya,や,hira2
+yu,ゆ,hira2
+yo,よ,hira2
 kya,きゃ,hira3
 kyu,きゅ,hira3
 kyo,きょ,hira3
@@ -171,6 +171,6 @@ be,ベ,kata2
 pe,ペ,kata2
 bo,ボ,kata2
 po,ポ,kata2
-ya,ヤ,kata3
-yu,ユ,kata3
-yo,ヨ,kata3
+ya,ヤ,kata2
+yu,ユ,kata2
+yo,ヨ,kata2
