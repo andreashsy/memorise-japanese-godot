@@ -118,10 +118,10 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -146.0
-offset_top = 63.0
-offset_right = -8.0
-offset_bottom = 227.0
+offset_left = -173.0
+offset_top = 64.0
+offset_right = -4.0
+offset_bottom = 368.0
 grow_horizontal = 0
 
 [node name="FlipCheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
@@ -272,6 +272,7 @@ text = "スコア"
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2go6i")
 item_count = 3
 selected = 0
 popup/item_0/text = "4 つのせんたくし"
