@@ -158,7 +158,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_fj00y")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a670a")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_s103r")
 button_pressed = true
-text = "ごじゅうおん"
+text = "せいおん"
 
 [node name="Hira2CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
@@ -212,7 +212,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_tuliw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dby3b")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rvibc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pmuov")
-text = "ゴジユウオン"
+text = "セイオン"
 
 [node name="Kata2CheckButton" type="CheckButton" parent="CanvasLayer/MenuVBox"]
 layout_mode = 2
