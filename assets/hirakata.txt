@@ -157,8 +157,8 @@ zu,ズ,kata2
 ze,ゼ,kata2
 zo,ゾ,kata2
 da,ダ,kata2
-di,ヂ,kata2
-du,ヅ,kata2
+ji,ヂ,kata2
+zu,ヅ,kata2
 de,デ,kata2
 do,ド,kata2
 ba,バ,kata2

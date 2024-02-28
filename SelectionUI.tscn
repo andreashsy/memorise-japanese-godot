@@ -3,8 +3,6 @@
 [ext_resource type="Script" path="res://scripts/SelectionUI.gd" id="1_j6gme"]
 [ext_resource type="FontFile" uid="uid://duwgq1n3s22n" path="res://assets/NotoSansJP-VariableFont_wght.ttf" id="2_2go6i"]
 [ext_resource type="Texture2D" uid="uid://cg5b0d5qju83q" path="res://assets/menu_icon.png" id="3_iwd61"]
-[ext_resource type="Texture2D" uid="uid://bv75eju33i48q" path="res://assets/hiragana.png" id="4_sppvp"]
-[ext_resource type="Texture2D" uid="uid://dantwo8suu2he" path="res://assets/katakana.png" id="5_5joi0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_deo1u"]
 
@@ -45,6 +43,12 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvibc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmuov"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pb3rf"]
+load_path = "res://.godot/imported/hiragana.png-cbb27fdb8e84adf0ad12b123a0b307da.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mwlrq"]
+load_path = "res://.godot/imported/katakana.png-d57da7d8e3eababea14ed9846c8ccf56.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3jj5"]
 
@@ -334,12 +338,12 @@ grow_vertical = 2
 [node name="HiraganaRef" type="Sprite2D" parent="CanvasLayer/RefCenterContainer"]
 visible = false
 position = Vector2(20, 20)
-texture = ExtResource("4_sppvp")
+texture = SubResource("CompressedTexture2D_pb3rf")
 
 [node name="KatakanaRef" type="Sprite2D" parent="CanvasLayer/RefCenterContainer"]
 visible = false
 position = Vector2(20, 20)
-texture = ExtResource("5_5joi0")
+texture = SubResource("CompressedTexture2D_mwlrq")
 
 [node name="MenuButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
