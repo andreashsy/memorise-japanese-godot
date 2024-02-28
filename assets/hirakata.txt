@@ -162,7 +162,7 @@ du,ヅ,kata2
 de,デ,kata2
 do,ド,kata2
 ba,バ,kata2
-po,パ,kata2
+pa,パ,kata2
 bi,ビ,kata2
 pi,ピ,kata2
 bu,ブ,kata2
